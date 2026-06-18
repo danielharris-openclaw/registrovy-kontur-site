@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://registrovy-kontur.ru/sitemap.xml
