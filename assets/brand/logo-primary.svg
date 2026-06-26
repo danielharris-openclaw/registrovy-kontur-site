@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="550" height="140" viewBox="0 0 550 140" fill="none">
+<defs></defs>
+  <g transform="translate(8,20)">
+  <polygon points="32,18 68,18 86,50 68,82 32,82 14,50" fill="none" stroke="#0E2A47" stroke-width="6" stroke-linejoin="round"></polygon>
+  <path d="M30,60 H48 V40 H70" fill="none" stroke="#18897E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <circle cx="30" cy="60" r="3.3" fill="#0E2A47"></circle>
+  <circle cx="48" cy="60" r="3.3" fill="#0E2A47"></circle>
+  <circle cx="48" cy="40" r="3.3" fill="#0E2A47"></circle>
+  <circle cx="70" cy="40" r="5.4" fill="#18897E"></circle></g>
+  <text x="120" y="82" font-family="&#39;IBM Plex Sans&#39;,&#39;Helvetica Neue&#39;,Arial,sans-serif" font-size="44" font-weight="600" letter-spacing="-0.5" fill="#0E2A47">Регистровый Контур</text>
+</svg>
