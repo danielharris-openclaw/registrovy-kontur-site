@@ -36,3 +36,42 @@ document.querySelectorAll("[data-lead-form]").forEach((form) => {
     form.reset();
   });
 });
+
+
+// Визуальное улучшение: мягкое появление блоков при прокрутке.
+// Не влияет на форму и меню; при отключённом JS всё видно по умолчанию.
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+
+  const targets = document.querySelectorAll(
+    ".section-head, .card, .price-card, .process-step, .metric, .media-panel, .check-list li, .hero-note"
+  );
+  if (!targets.length) return;
+
+  document.documentElement.classList.add("js-reveal");
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  targets.forEach((el) => el.classList.add("reveal"));
+
+  if (reduce) {
+    targets.forEach((el) => el.classList.add("in"));
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  targets.forEach((el, i) => {
+    el.style.transitionDelay = (i % 6) * 45 + "ms";
+    io.observe(el);
+  });
+})();
