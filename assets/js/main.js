@@ -15,6 +15,8 @@ document.querySelectorAll("a[href^='#']").forEach((link) => {
   });
 });
 
+// TODO (перед запуском): подключить реальную отправку заявки на email / Telegram / CRM.
+// Сейчас обработчик только показывает подтверждение в интерфейсе и НЕ отправляет данные.
 document.querySelectorAll("[data-lead-form]").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -27,7 +29,7 @@ document.querySelectorAll("[data-lead-form]").forEach((form) => {
     const name = data.get("name") || "Спасибо";
 
     if (status) {
-      status.textContent = `${name}, заявка зафиксирована в демо-форме. Для запуска нужно подключить отправку на email, Telegram или CRM.`;
+      status.textContent = `${name}, спасибо! Заявка принята — мы свяжемся с вами по указанным контактам.`;
       status.classList.add("visible");
     }
 
